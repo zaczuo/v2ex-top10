@@ -14,6 +14,7 @@ url = "https://www.v2ex.com/api/topics/hot.json"
 user_name = "xxxxx@xxx.com"
 passwd = "xxxxxx"
 smtp_serv = "smtp@xxx.com"
+send_to = "xxxxxx@xx.com"
 
 class SendMail:
     
@@ -65,5 +66,5 @@ if __name__ == "__main__":
     #with open(r"d:/msg.txt","w+") as f:
     #    f.writelines(msg)
     str_msg = ''.join(msg)
-    send.sendmsg("xxxx@xxx.com",title,str_msg)
+    send.sendmsg(send_to,title,str_msg)
 
