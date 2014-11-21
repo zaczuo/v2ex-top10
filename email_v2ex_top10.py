@@ -37,9 +37,7 @@ class SendMail:
 
 
 def build_msg():
-    #res = urllib2.urlopen(url).read()
-    f = open(r"d:\hot.json","r")
-    res = f.read()
+    res = urllib2.urlopen(url).read()
     json_res = json.loads(res)
     msg = []
     id = 0
@@ -60,13 +58,12 @@ if __name__ == "__main__":
     send = SendMail(user_name,passwd,smtp_serv)
     today = time.strftime("%Y-%m-%d",time.localtime(time.time()))
     title = "v2ex top 10  " + today
-    print title
+    #print title
     msg = build_msg()
     #print msg
     #with codecs.open(r"d:/msg.txt","w+",'utf-8') as f:
     #with open(r"d:/msg.txt","w+") as f:
     #    f.writelines(msg)
     str_msg = ''.join(msg)
-   #print str_msg
     send.sendmsg("xxxx@xxx.com",title,str_msg)
 
